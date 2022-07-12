@@ -1,0 +1,14 @@
+.swiper-button-next,
+.swiper-button-prev {
+    color: rgb(255, 193, 7);
+}
+
+.swiper {
+    margin-bottom: 50px;
+}
+.btn-warning {
+    color: #fff !important;
+    font-weight: 700 !important;
+    background-color: rgb(255, 193, 7) !important;
+    border-color: rgb(255, 193, 7) !important;
+}

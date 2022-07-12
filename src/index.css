@@ -1,13 +1,199 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.navLinkStyle {
+    text-decoration: none;
+    color: #000000 !important;
+    padding-bottom: 10px;
+}
+
+.navLinkStyle:hover {
+    color: #EB4367 !important;
+}
+
+.main-wrapper {
+    position: relative;
+    padding-bottom: 120px;
+}
+
+.card-image {
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.card-image img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100;
+}
+
+.card-wrapper {
+    flex: 1 1 auto;
+    margin-bottom: 30px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.usePage .heart {
+    position: inherit;
+}
+
+.btn.btn-orange {
+    border-radius: 0;
+    box-shadow: 0 0 0 10px rgba(250, 250, 250, 0.1);
+    background: #f17c0e;
+    border: 2px solid #f17c0e;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.4s;
+    transform: perspective(1px) translateZ(0);
+    transition: color 0.4s;
+    width: fit-content;
+}
+
+.btn.btn-orange::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0;
+}
+
+.btn.btn-orange:hover {
+    color: #f17c0e;
+    box-shadow: none;
+}
+
+.btn-orange::before {
+    clip-path: circle(0.5% at 50% 50%);
+    background: #ffffff;
+    transition: 0.4s;
+    opacity: 1;
+}
+
+.btn-orange:hover::before {
+    clip-path: circle(100% at 50% 50%);
+}
+
+.card.border-orange {
+    border: 1px solid #fdbc7f;
+
+}
+
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+
+@media (max-width: 768px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .btn.btn-orange {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .cards-wrapper {
+        grid-template-columns: 1fr;
+        grid-template: 20px;
+    }
+}
+
+.navbar.navbar-orange {
+    background-color: #f17c0e;
+    font-weight: 700;
+    padding: 15px 0;
+}
+
+.navbar.navbar-orange a {
+    color: #ffffff;
+    transition: color 0.5s;
+    position: relative;
+    padding: 0;
+    margin-right: 30px;
+}
+
+.navbar.navbar-orange a:hover {
+    color: #212529;
+}
+
+.navLinkStyle:hover {
+    color: #EB4367 !important;
+}
+
+.position-fixed-button {
+    position: fixed;
+    right: 10px;
+    top: 90%;
+    padding: 10px;
+    background: #ffe;
+    border: 1px solid #333;
+    z-index: 12 !important;
+}
+
+.banner-background {
+    background-color: #fdbf08;
+}
+
+.banner-background-black {
+    background-color: #000000;
+}
+
+.border-radius {
+    border-radius: 10%;
+}
+
+.test.col {
+    width: 50%;
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+    line-height: 19px;
+    height: calc(19px * 10);
+    overflow: hidden;
+}
+
+.page {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
 }

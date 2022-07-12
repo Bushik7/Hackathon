@@ -1,0 +1,9 @@
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.badges img {
+  height: 20px;
+}

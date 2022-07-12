@@ -1,0 +1,68 @@
+.heart {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  background: none;
+  border: none;
+  padding: 0;
+  transform: scale(var(--button-scale, 1)) translateZ(0);
+  transition: transform .2s;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.heart:active {
+  --button-scale: .95;
+}
+
+.heart.active .heart-flip {
+  --rotate: 45deg;
+  --pseudo-filter: 100%;
+  --pseudo-filter-second: 50%;
+  --pseudo-rotate: 0deg;
+  --pseudo-rotate-second: 90deg;
+  --heart-background: var(--active);
+}
+
+.heart .heart-flip {
+  --base: 20px;
+  --duration: .6s;
+  --active: #ea4673;
+  --inactive: #929292;
+  width: var(--base);
+  height: calc(var(--base) + var(--base) / 2);
+  border-radius: calc(var(--base) / 2) calc(var(--base) / 2) 0 0;
+  position: relative;
+  transform-origin: 50% 66.66%;
+  transform-style: preserve-3d;
+  transform: rotate(var(--rotate, -45deg));
+  transition: background var(--duration), transform var(--duration) ease;
+  background: var(--heart-background, var(--inactive));
+
+}
+
+.heart .heart-flip:before,
+.heart .heart-flip:after {
+  content: '';
+  width: calc(var(--base) / 2);
+  height: var(--base);
+  border-radius: var(--pseudo-border-radius, calc(var(--base) / 2) 0 0 calc(var(--base) / 2));
+  position: absolute;
+  left: var(--pseudo-left, -50%);
+  transform-origin: var(--pseudo-origin, 100%) 50%;
+  bottom: 0;
+  background: var(--heart-background, var(--inactive));
+  filter: brightness(var(--pseudo-filter, 50%));
+  transform: translateX(1%) rotateY(var(--pseudo-rotate, 90deg)) translateZ(0);
+  transition: background var(--duration), transform var(--duration) ease, filter var(--duration);
+}
+
+.heart .heart-flip:after {
+  --pseudo-border-radius: 0 calc(var(--base) / 2) calc(var(--base) / 2) 0;
+  --pseudo-left: 100%;
+  --pseudo-origin: 0;
+  filter: brightness(var(--pseudo-filter-second, 100%));
+  transform: translateX(-1%) rotateY(var(--pseudo-rotate-second, 0deg)) translateZ(0);
+}
